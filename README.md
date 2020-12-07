@@ -8,17 +8,7 @@ Software Dependencies( important gems)
 gem 'groupdate'
 gem 'chartkick'
 # For xls and csv files upload
-gem 'roo', '~> 2.8.0'
-gem 'roo-xls'
-gem 'font-awesome-sass', '~> 5.13.0'
-gem 'image_processing', '~> 1.2'
-gem 'jquery-rails'
-gem 'searchkick'
-gem 'devise'
-gem 'mini_magick'
-gem 'figaro'
-gem 'fog-aws'
-gem 'carrierwave', '~> 2.0'
+gem 'roo'
 gem 'pg', group: :production
 gem 'rails_12factor', group: :production 
 
