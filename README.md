@@ -25,3 +25,5 @@ gem 'rails_12factor', group: :production
 This application is an aggregator for particular political election. I created this application in roughly 2 days..The application enables the user to able to create read update and delete records of electoral process within constituencies. It then aggregator results from the regions based on each party and displays the party that is leading the elections. The app presents results as tables, pie-charts, bar-charts and line plots respectively using chartkick & chart.js gem. You can also upload results as CSV files in specific format given within tables of data.
 
 The application has user-login admin sign-out features. The application can view as follows
+![vote7](https://user-images.githubusercontent.com/1752399/101395892-d7ccbb00-38ca-11eb-8aa2-b0e1e8d8ab4a.png)
+
