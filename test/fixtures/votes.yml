@@ -1,0 +1,29 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  region: MyString
+  constituency_name: MyString
+  cpp: 1
+  ndp: 1
+  ndc: 1
+  ppp: 1
+  npp: 1
+  pnc: 1
+  ind: 1
+  total_valid_votes: 1
+  rejected_votes: 1
+  total_votes_cast: 1
+
+two:
+  region: MyString
+  constituency_name: MyString
+  cpp: 1
+  ndp: 1
+  ndc: 1
+  ppp: 1
+  npp: 1
+  pnc: 1
+  ind: 1
+  total_valid_votes: 1
+  rejected_votes: 1
+  total_votes_cast: 1

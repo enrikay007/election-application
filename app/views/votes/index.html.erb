@@ -1,0 +1,218 @@
+<p id="notice"><%= notice %></p>
+<div class="row">
+       <div class="col-sm-4">
+            <div class="box">
+                    <div class="box-header">
+                      <h2>% Progress Bar Party Stats </h2>
+                      <small>Progress of elections</small>
+                    </div>
+                    <div class="box-divider m-0"></div>
+                   
+                   
+
+                    <%= bar_chart({"CPP" => @sum_cpp, "NDP" => @sum_ndp, "NDC" => @sum_ndc, "PPP"=> @sum_ppp, "NPP"=> @sum_npp, "PNC" => @sum_pnc, "IND" => @sum_ind})%>
+
+            </div>
+        </div>
+
+
+        <div class="col-sm-4">
+                <div class="box">
+                        <div class="box-header">
+                          <h2>Leader board</h2>
+                          <small>Current stats</small>
+                        </div>
+                        <div class="box-divider m-0"></div>
+
+                        <%= column_chart({"CPP" => @sum_cpp, "NDP" => @sum_ndp, "NDC" => @sum_ndc, "PPP"=> @sum_ppp, "NPP"=> @sum_npp, "PNC" => @sum_pnc, "IND" => @sum_ind})%>
+                </div>
+
+          </div>
+          <div class="col-sm-4">
+            <div class="box">
+                    <div class="box-header">
+                      <h2>% Stats </h2>
+                      <small>Number of party votes</small>
+                    </div>
+                    <div class="box-divider m-0"></div>
+                   
+                   
+
+                    <%= line_chart({"CPP" => @sum_cpp, "NDP" => @sum_ndp, "NDC" => @sum_ndc, "PPP"=> @sum_ppp, "NPP"=> @sum_npp, "PNC" => @sum_pnc, "IND" => @sum_ind})%>
+
+            </div>
+        </div>
+</div>
+
+
+<div class="box">
+        <div class="box-header">
+          <h1>Votes</h1>
+          <small>Collation at Constituency Level</small>
+        </div>
+        <div class="box-divider m-0"></div>
+                    
+            <table class="table table-hover table-condensed">
+              <thead>
+                <tr>
+                  <th>Region</th>
+                  <th>Constituency name</th>
+                  <th>Cpp</th>
+                  <th>Ndp</th>
+                  <th>Ndc</th>
+                  <th>Ppp</th>
+                  <th>Npp</th>
+                  <th>Pnc</th>
+                  <th>Ind</th>
+                  <th>Total valid votes</th>
+                  <th>Rejected votes</th>
+                  <th>Total votes cast</th>
+                   <% if user_signed_in? %>
+                  <th colspan="3"></th>
+                  <% end %>
+                </tr>
+              </thead>
+
+              <tbody>
+                <% @votes.each do |vote| %>
+                  <tr>
+                    <td><%= vote.region %></td>
+                    <td><%= vote.constituency_name %></td>
+                    <td><%= vote.cpp %></td>
+                    <td><%= vote.ndp %></td>
+                    <td><%= vote.ndc %></td>
+                    <td><%= vote.ppp %></td>
+                    <td><%= vote.npp %></td>
+                    <td><%= vote.pnc %></td>
+                    <td><%= vote.ind %></td>
+                    <td><%= vote.total_valid_votes %></td>
+                    <td><%= vote.rejected_votes %></td>
+                    <td><%= vote.total_votes_cast %></td>
+                    <td><%= link_to 'Show', vote , class: "btn btn-link"%></td>
+                     <% if user_signed_in? %>
+                    <td><%= link_to 'Edit', edit_vote_path(vote), class: "btn btn-link" %></td>
+                    <td><%= link_to 'Destroy', vote, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-link" %></td>
+                    <% end %>
+                  </tr>
+                <% end %>
+              </tbody>
+            </table>
+
+
+<br>
+ <% if user_signed_in?  %>
+<%= link_to 'New Vote', new_vote_path, class: "btn btn-link" %>
+
+    <br>
+    <br>
+
+      <h2>Upload File</h2>
+      <%= form_tag import_votes_path, multipart: true do %>
+        <%= file_field_tag :file %>
+        <%= submit_tag "Upload votes"%>
+      <% end %>
+      
+<% end %>
+<br>
+<br>
+
+</div>
+
+
+
+
+<br>
+<br>
+
+<div class="row">
+        <div class="col-sm-4">
+            <div class="box">
+                    <div class="box-header">
+                      <h2>% Current statistics (Grand Total)</h2>
+                      <small>Compiled Results</small>
+                    </div>
+                    <div class="box-divider m-0"></div>
+                    <table class="table table-hover table-condensed">
+                        <thead>
+                          <tr>
+                            <th>Party</th>
+                            <th>Number Votes</th>
+                            
+                            
+                          </tr>
+                        </thead>
+
+                        <tbody>
+                         
+                            <tr>
+                              <td> CPP</td>
+                              <td> <%= @sum_cpp %></td>
+                              
+                            </tr>
+
+                            <tr>
+                              <td> NDP </td>
+                              <td> <%= @sum_ndp %></td>
+                              
+                            </tr>
+
+                            <tr>
+                              <td> NDC</td>
+                              <td> <%= @sum_ndc %></td>
+                              
+                            </tr>
+
+                            <tr>
+                              <td> PPP</td>
+                              <td> <%= @sum_ppp %></td>
+                              
+                            </tr>
+
+
+                            <tr>
+                              <td> NPP</td>
+                              <td> <%= @sum_npp %></td>
+                              
+                            </tr>
+
+                            <tr>
+                              <td> PNC</td>
+                              <td> <%= @sum_pnc %></td>
+                              
+                            </tr>
+
+                            <tr>
+                              <td> IND</td>
+                              <td> <%= @sum_ind %></td>
+                              
+                            </tr>
+
+                        </tbody>
+                      </table>
+                      
+                    
+
+                    <br>
+                    <br>
+                    <br>
+            </div>
+        </div>
+
+        <div class="col-sm-4">
+            <div class="box">
+                    <div class="box-header">
+                      <h2>% View results </h2>
+                      <small> current stats</small>
+                    </div>
+                    <div class="box-divider m-0"></div>
+                   
+                   
+
+                    <%= pie_chart({"CPP" => @sum_cpp, "NDP" => @sum_ndp, "NDC" => @sum_ndc, "PPP"=> @sum_ppp, "NPP"=> @sum_npp, "PNC" => @sum_pnc, "IND" => @sum_ind})%>
+
+                    <br>
+                    <br>
+            </div>
+        </div>
+</div>
+

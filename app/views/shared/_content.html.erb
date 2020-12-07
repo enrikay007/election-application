@@ -1,0 +1,136 @@
+<div class="dker p-x">
+    <div class="row">
+      <div class="col-sm-6 push-sm-6">
+        <div class="p-y text-center text-sm-right">
+          <a href="" class="inline p-x text-center">
+            <span class="h4 block m-a-0">2k</span>
+            <small class="text-xs text-muted">Followers</small>
+          </a>
+          <a href="" class="inline p-x b-l b-r text-center">
+            <span class="h4 block m-a-0">250</span>
+            <small class="text-xs text-muted">Following</small>
+          </a>
+          <a href="" class="inline p-x text-center">
+            <span class="h4 block m-a-0">89</span>
+            <small class="text-xs text-muted">Activities</small>
+          </a>
+        </div>
+      </div>
+      <div class="col-sm-6 pull-sm-6">
+        <div class="p-y-md clearfix nav-active-primary">
+          <ul class="nav nav-pills nav-sm">
+            <li class="nav-item active">
+               <% if user_signed_in? %>
+            <a href="/votes" class="nav-link" >
+                VIEW Votes</a>
+            <% else %>
+            <a href="/users/sign_up" class="nav-link">
+                Current Votes</i>
+            </a>
+            <% end %>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="" data-toggle="tab" data-target="#tab_2">Region</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="" data-toggle="tab" data-target="#tab_3">Registered</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="" data-toggle="tab" data-target="#tab_4">Constituency</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+<div class="row">
+  <div class="col-sm-4">
+            <div class="box">
+                    <div class="box-header">
+                      <h2>% Current statistics (Grand Total)</h2>
+                      <small>Compiled Results</small>
+                    </div>
+                    <div class="box-divider m-0"></div>
+                    <table class="table table-hover table-condensed">
+                        <thead>
+                          <tr>
+                            <th>Party</th>
+                            <th>Number Votes</th>
+                            
+                            
+                          </tr>
+                        </thead>
+
+                        <tbody>
+                         
+                            <tr>
+                              <td> CPP</td>
+                              <td> <%= @sum_cpp %></td>
+                              
+                            </tr>
+
+                            <tr>
+                              <td> NDP </td>
+                              <td> <%= @sum_ndp %></td>
+                              
+                            </tr>
+
+                            <tr>
+                              <td> NDC</td>
+                              <td> <%= @sum_ndc %></td>
+                              
+                            </tr>
+
+                            <tr>
+                              <td> PPP</td>
+                              <td> <%= @sum_ppp %></td>
+                              
+                            </tr>
+
+
+                            <tr>
+                              <td> NPP</td>
+                              <td> <%= @sum_npp %></td>
+                              
+                            </tr>
+
+                            <tr>
+                              <td> PNC</td>
+                              <td> <%= @sum_pnc %></td>
+                              
+                            </tr>
+
+                            <tr>
+                              <td> IND</td>
+                              <td> <%= @sum_ind %></td>
+                              
+                            </tr>
+
+                        </tbody>
+                      </table>
+                      
+                    
+
+                    <br>
+                    <br>
+                    <br>
+            </div>
+        </div>
+
+        <div class="col-sm-4">
+            <div class="box">
+                    <div class="box-header">
+                      <h2>% View results </h2>
+                      <small> current stats</small>
+                    </div>
+                    <div class="box-divider m-0"></div>
+                   
+                   
+
+                    <%= pie_chart({"CPP" => @sum_cpp, "NDP" => @sum_ndp, "NDC" => @sum_ndc, "PPP"=> @sum_ppp, "NPP"=> @sum_npp, "PNC" => @sum_pnc, "IND" => @sum_ind})%>
+
+                    <br>
+                    <br>
+            </div>
+        </div>
+  </div>
