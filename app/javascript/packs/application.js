@@ -20,7 +20,7 @@ require("jquery/tether/dist/js/tether.min.js")
 require("jquery/bootstrap/dist/js/bootstrap.js")
 require("jquery/underscore/underscore-min.js")
 require("jquery/jQuery-Storage-API/jquery.storageapi.min.js")
-require("jquery/PACE/pace.min.js")
+
 require("jquery/jquery-pjax/jquery.pjax.js")
 require("jquery/flot/jquery.flot.js")
 require("jquery/flot/jquery.flot.resize.js")
