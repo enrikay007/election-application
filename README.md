@@ -26,4 +26,10 @@ This application is an aggregator for particular political election. I created t
 
 The application has user-login admin sign-out features. The application can view as follows
 ![vote7](https://user-images.githubusercontent.com/1752399/101395892-d7ccbb00-38ca-11eb-8aa2-b0e1e8d8ab4a.png)
-
+![vote1](https://user-images.githubusercontent.com/1752399/101395843-c97e9f00-38ca-11eb-8492-6bdb48a0a99a.png)
+![vote2](https://user-images.githubusercontent.com/1752399/101395845-caafcc00-38ca-11eb-8b97-8f51de417472.png)
+![vote3](https://user-images.githubusercontent.com/1752399/101395847-cb486280-38ca-11eb-8890-ad468d169342.png)
+![vote8](https://user-images.githubusercontent.com/1752399/101395849-cc798f80-38ca-11eb-91a0-d7bfddb15d84.png)
+![vote4](https://user-images.githubusercontent.com/1752399/101395886-d69b8e00-38ca-11eb-9150-bf8310c04f63.png)
+![vote6](https://user-images.githubusercontent.com/1752399/101395903-db604200-38ca-11eb-9703-cf07c940588c.png)
+![vote5](https://user-images.githubusercontent.com/1752399/101395916-def3c900-38ca-11eb-998b-1206ca6deeaa.png)
